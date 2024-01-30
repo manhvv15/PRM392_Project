@@ -7,9 +7,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-    Connection connection = null;
+    static Connection connection = null;
 
-    public Connection createConnection() {
+    public static Connection createConnection() {
         String url = null;
         String ip = "10.0.2.2";
         String port = "1433";
