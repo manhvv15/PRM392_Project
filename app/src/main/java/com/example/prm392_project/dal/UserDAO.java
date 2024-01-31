@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 public class UserDAO {
     public User getUser(String account, String password) {
         try{
-            String query = "SELECT * FROM user WHERE account = ? and password = ?";
+            String query = "SELECT * FROM dbo.[User] WHERE account = ? and password = ?";
             PreparedStatement ps = DAO.connection.prepareStatement(query);
             ps.setString(1,account);
             ps.setString(2,password);

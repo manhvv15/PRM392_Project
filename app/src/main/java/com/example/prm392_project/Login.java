@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.prm392_project.dal.DBConnection;
 import com.example.prm392_project.dal.UserDAO;
@@ -46,7 +47,11 @@ public class Login extends AppCompatActivity {
                 String password = edtPassword.getText().toString();
                 try{
 //                    DBConnection connection = connect.create
-                    userDAO.getUser(userName,password);
+                    if(userDAO.getUser(userName,password)!=null){
+                        Toast.makeText(Login.this,"dang nhap thanh cong",Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(Login.this,"Fail",Toast.LENGTH_LONG).show();
+                    };
                 }catch (Exception ex){
                     Log.e("", ex.getMessage());
                 }
