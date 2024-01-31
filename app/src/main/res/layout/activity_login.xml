@@ -28,6 +28,7 @@
         android:background="#30ffffff"
         android:drawableLeft="@drawable/person"
         android:drawablePadding="20dp"
+
         android:textColorHint="@color/white"/>
     <EditText
         android:layout_width="match_parent"
