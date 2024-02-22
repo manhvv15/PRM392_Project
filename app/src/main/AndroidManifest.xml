@@ -16,6 +16,21 @@
         android:theme="@style/Theme.PRM392_Project"
         tools:targetApi="31">
         <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_VerifyOTP"
+            android:exported="false" />
+        <activity
+            android:name=".OTP_Phone"
+            android:exported="true" />
+        <activity
+            android:name=".OTP_Email"
+            android:exported="false" />
+        <activity
             android:name=".Navigation_Home"
             android:exported="true" />
         <activity
@@ -25,8 +40,7 @@
         <activity
             android:name=".Login"
             android:exported="true"
-            android:label="Login"
-            >
+            android:label="Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

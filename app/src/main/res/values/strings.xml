@@ -2,4 +2,7 @@
     <string name="app_name">PRM392_Project</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="we_will">We will send you an one time otp on this given mobile number</string>
+    <string name="enter_mobile">Enter Mobile number</string>
+    <string name="otp_vertifiaction">OTP Vertification</string>
 </resources>

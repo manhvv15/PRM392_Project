@@ -25,6 +25,9 @@
                 <item android:id="@+id/login"
                     android:icon="@drawable/login"
                     android:title="Login"/>
+                <item android:id="@+id/register"
+                    android:icon="@drawable/register"
+                    android:title="Register"/>
                 <item android:id="@+id/rate_us"
                     android:icon="@drawable/google"
                     android:title="rate_us"/>

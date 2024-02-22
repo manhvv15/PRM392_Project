@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OTP_Phone">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/tmg_sendOtp"
+            android:src="@drawable/send_email"
+            android:layout_marginTop="90dp"  />
+        
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextFirst"
+                android:text="OTP Vertification"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTextSecond"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:text="@string/we_will"
+            android:layout_marginTop="8dp"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTextSecond"
+            android:layout_marginLeft="30dp"
+            android:gravity="center"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/enter_mobile"
+            android:layout_marginTop="20dp"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="+84"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextFirst"/>
+            <EditText
+                android:id="@+id/edtInputMobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="3dp"
+                android:inputType="number"
+                android:hint="0353271947"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextFirst"/>
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/btnGet_Otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get OTP"
+                android:textStyle="bold"
+                android:layout_margin="30dp"
+                android:textColor="@color/colorTextFirst"
+                android:background="@drawable/background_button"/>
+            <ProgressBar
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/processbar_sendding_otp"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</ScrollView>

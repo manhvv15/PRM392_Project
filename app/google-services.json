@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "502189856853",
+    "project_id": "otp-prm-7337e",
+    "storage_bucket": "otp-prm-7337e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502189856853:android:dbaba76ae1203ad9745cdc",
+        "android_client_info": {
+          "package_name": "com.example.prm392_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMuBjgrMhImYzCkZmFjWWOEvy9TVwLnms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
