@@ -5,4 +5,10 @@
     <string name="we_will">We will send you an one time otp on this given mobile number</string>
     <string name="enter_mobile">Enter Mobile number</string>
     <string name="otp_vertifiaction">OTP Vertification</string>
+
+    <string name="facebook_app_id">247891811717253</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
+
+
 </resources>

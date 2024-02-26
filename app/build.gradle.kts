@@ -53,4 +53,9 @@ dependencies {
     implementation("com.android.volley:volley:1.2.1")
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.google.android.recaptcha:recaptcha:18.4.0")
+    implementation ("com.google.android.gms:play-services-safetynet:18.0.0")
+    //implementation ("com.amitshekhar.android:android-networking:1.0.2")
+    implementation ("com.facebook.android:facebook-android-sdk:latest.release")
+    implementation ("com.google.android.gms:play-services-auth:21.0.0")
 }
