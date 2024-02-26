@@ -1,5 +1,9 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
+    //id("com.google.gms.google-services") version "4.4.1" apply false
+   // id("com.android.application")
+   // id("com.google.gms.google-services")
 }
 
 android {
@@ -38,10 +42,20 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(files("D:\\AndoidXuanthu\\PRM392_Project\\app\\libs\\jtds-1.3.1.jar"))
+    implementation("com.google.firebase:firebase-auth:22.3.1")
+//    implementation("com.google.firebase:firebase-auth:19.3.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     compileOnly("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
     implementation ("com.google.android.material:material:1.5.0")
+    implementation("com.android.volley:volley:1.2.1")
+    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.google.android.recaptcha:recaptcha:18.4.0")
+    implementation ("com.google.android.gms:play-services-safetynet:18.0.0")
+    //implementation ("com.amitshekhar.android:android-networking:1.0.2")
+    implementation ("com.facebook.android:facebook-android-sdk:latest.release")
+    implementation ("com.google.android.gms:play-services-auth:21.0.0")
 }

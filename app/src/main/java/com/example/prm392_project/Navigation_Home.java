@@ -38,9 +38,9 @@ public class Navigation_Home extends AppCompatActivity {
         materialToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                if(item.getItemId()==R.id.contact){
+                if(item.getItemId()==R.id.order){
 
-                    Toast.makeText(Navigation_Home.this,"Contact is selected",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Navigation_Home.this,"Order is selected",Toast.LENGTH_SHORT).show();
                 }else if(item.getItemId()==R.id.home){
                     Toast.makeText(Navigation_Home.this,"home is selected",Toast.LENGTH_SHORT).show();
                 }

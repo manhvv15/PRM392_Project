@@ -2,13 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="Captcha">
+        <State />
+      </entry>
       <entry key="Login">
         <State />
       </entry>
-      <entry key="MainActivity">
+      <entry key="Navigation_Home">
         <State />
       </entry>
-      <entry key="Navigation_Home">
+      <entry key="OTP_Phone">
+        <State />
+      </entry>
+      <entry key="Register">
         <State />
       </entry>
       <entry key="app">

@@ -21,7 +21,7 @@
                 android:id="@+id/material_tool_nav"
                 app:titleTextColor="@color/white"
                 app:navigationIcon="@drawable/menu1"
-
+                app:menu="@menu/main_menu"
                 >
 
             </com.google.android.material.appbar.MaterialToolbar>
