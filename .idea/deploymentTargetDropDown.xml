@@ -5,13 +5,13 @@
       <entry key="Captcha">
         <State />
       </entry>
+      <entry key="InforOrder">
+        <State />
+      </entry>
       <entry key="Login">
         <State />
       </entry>
       <entry key="Navigation_Home">
-        <State />
-      </entry>
-      <entry key="OTP_Phone">
         <State />
       </entry>
       <entry key="Register">
