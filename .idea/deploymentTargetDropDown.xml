@@ -2,7 +2,10 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Captcha">
+      <entry key="Admin_AllProducts">
+        <State />
+      </entry>
+      <entry key="Admin_Product">
         <State />
       </entry>
       <entry key="InforOrder">
@@ -12,9 +15,6 @@
         <State />
       </entry>
       <entry key="Navigation_Home">
-        <State />
-      </entry>
-      <entry key="Register">
         <State />
       </entry>
       <entry key="app">
