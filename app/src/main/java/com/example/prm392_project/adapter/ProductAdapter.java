@@ -1,9 +1,12 @@
 package com.example.prm392_project.adapter;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,11 +43,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     @Override
     public void onBindViewHolder(@NonNull ProductHolder holder, int position) {
         Product product =  (Product) produList.get(position);
-
+     //  int x = product.getSupplier().getId();
         holder.Id.setText(product.getId()+"");
         holder.Name.setText(product.getName());
         holder.Price.setText(product.getPrice()+"");
         holder.Quantity.setText(product.getQuantity()+"");
+        holder.CreatedAt.setText(product.getCreatedAt()+"");
+        holder.CreatedBy.setText(product.getCreatedBy()+"");
+       // holder.imgProduct.setImageResource((product.getSupplier().getId()));
     }
 
     @Override
@@ -58,7 +64,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
 
     public  class ProductHolder extends RecyclerView.ViewHolder{
         private View itemview;
-        public TextView Id,Name,Price,Quantity;
+        public TextView Id,Name,Price,Quantity,CreatedAt,CreatedBy;
+        Button btnInfor,btnDelete;
+        ImageView imgProduct;
         public ProductHolder(@NonNull View itemView) {
             super(itemView);
             itemview = itemView;
@@ -66,6 +74,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
             Name = itemView.findViewById(R.id.txtNameProduct);
             Price = itemView.findViewById(R.id.txtPriceProduct);
             Quantity = itemView.findViewById(R.id.txtQuantityProduct);
+            CreatedAt = itemView.findViewById(R.id.txtCreatedAtProduct);
+            CreatedBy = itemView.findViewById(R.id.txtTaoBoiProduct);
+            btnInfor  = itemView.findViewById(R.id.btnInforProduct);
+            btnDelete  = itemView.findViewById(R.id.btnDeleteProduct);
+            btnInfor.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+          //  imgProduct = itemView.findViewById(R.id.imgProduct);
         }
     }
 }

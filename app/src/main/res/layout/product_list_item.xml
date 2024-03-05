@@ -4,32 +4,38 @@
     android:layout_height="wrap_content"
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/txtIdProduct"
+        android:text="ID"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="3dp"/>
     <ImageView
         android:layout_width="80dp"
         android:layout_height="match_parent"
-        android:src="@drawable/viettel" />
+        android:id="@+id/imgProduct"
+        android:src="@drawable/mobiphone" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:id="@+id/txtNameProduct"
+            android:text="Tên sản phẩm"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtIdProduct"
-                android:text="ID"
-                android:padding="3dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dp"
-                android:id="@+id/txtNameProduct"
-                android:text="Tên sản phẩm"/>
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,6 +48,12 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtQuantityProduct"
                 android:text="Số lượng"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:padding="3dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtTaoBoiProduct"
+                android:text="Taoj boi"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -52,12 +64,7 @@
                 android:padding="3dp"
                 android:id="@+id/txtCreatedAtProduct"
                 android:text="Created At"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="3dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtTaoBoiProduct"
-                android:text="Taoj boi"/>
+
         </LinearLayout>
     </LinearLayout>
 

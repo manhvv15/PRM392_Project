@@ -37,6 +37,14 @@ public class Product {
         return name;
     }
 
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

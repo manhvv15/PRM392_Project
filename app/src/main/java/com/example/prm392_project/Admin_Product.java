@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.prm392_project.adapter.ProductAdapter;
+import com.example.prm392_project.dal.ProductDAO;
 import com.example.prm392_project.model.Product;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class Admin_Product extends AppCompatActivity {
     RecyclerView recyclerView;
     ProductAdapter productAdapter;
     ArrayList<Product> products;
+    ProductDAO productDAO = new ProductDAO();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,8 @@ public class Admin_Product extends AppCompatActivity {
         products = new ArrayList<Product>();
         products.add(new Product(1,"Name1",2,3));
         products.add(new Product(2,"Name2",2,3));
+        products =   productDAO.getListProduct();
+
         productAdapter = new ProductAdapter(products, this);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

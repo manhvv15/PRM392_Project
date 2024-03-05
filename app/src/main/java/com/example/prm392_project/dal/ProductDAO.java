@@ -27,4 +27,22 @@ public class ProductDAO {
         }
         return null;
     }
+    public ArrayList<Product> getListProduct() {
+        ArrayList<Product> list = new ArrayList<>();
+        try {
+            String str = "select * from dbo.[Product] ";
+            PreparedStatement ps = DAO.connection.prepareStatement(str);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("quantity"), rs.getInt("price"),
+                        DAO.supplierDAO.getSuppierById(rs.getInt("supplier")), rs.getTimestamp("createdAt"), DAO.userDAO.getUserById(rs.getInt("createdBy")),
+                        rs.getBoolean("isDelete"), rs.getTimestamp("deletedAt"), DAO.userDAO.getUserById(rs.getInt("deletedBy")),
+                        rs.getTimestamp("updatedAt"), DAO.userDAO.getUserById(rs.getInt("updatedBy"))));
+            }
+        } catch (Exception ex){
+            Log.e("", ex.getMessage());
+        }
+        return list;
+    }
 }
