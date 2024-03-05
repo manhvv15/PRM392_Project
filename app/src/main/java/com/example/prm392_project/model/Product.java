@@ -1,21 +1,29 @@
 package com.example.prm392_project.model;
-import java.sql.Timestamp;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.sql.Timestamp;
+
+@AllArgsConstructor
+@Data
+@Builder
 
 
 public class Product {
-
-
     private int id;
     private String name;
     private int quantity;
     private int price;
+    private Supplier supplier;
+    private Timestamp createdAt;
+    private User createdBy;
+    private boolean isDelete;
+    private Timestamp deletedAt;
+    private User deletedBy;
+    private Timestamp updatedAt;
+    private User updatedBy;
+
 
     public int getId() {
         return id;
