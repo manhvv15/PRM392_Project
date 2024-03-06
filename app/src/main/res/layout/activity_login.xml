@@ -60,6 +60,14 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
         android:text="LOGIN" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/register"
+        android:layout_marginTop="130dp"
+        android:layout_below="@id/txtForgotpass"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

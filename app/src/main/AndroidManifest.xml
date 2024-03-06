@@ -17,6 +17,9 @@
         android:theme="@style/Theme.PRM392_Project"
         tools:targetApi="31">
         <activity
+            android:name=".Admin_Infor"
+            android:exported="false" />
+        <activity
             android:name=".Admin"
             android:exported="false" />
         <activity

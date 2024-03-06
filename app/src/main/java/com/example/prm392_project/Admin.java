@@ -32,7 +32,7 @@ public class Admin extends AppCompatActivity {
         sanPham.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin.this, Product.class);
+                Intent intent = new Intent(Admin.this, Admin_Product.class);
                 startActivity(intent);
             }
         });
@@ -40,7 +40,7 @@ public class Admin extends AppCompatActivity {
         donHang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin.this, Product.class);
+                Intent intent = new Intent(Admin.this, Admin_Product.class);
                 startActivity(intent);
             }
         });

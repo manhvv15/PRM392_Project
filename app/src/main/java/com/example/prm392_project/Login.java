@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
     public  String login = "1";
-
+    Button register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +63,14 @@ public class Login extends AppCompatActivity {
         imgFb = findViewById(R.id.imgFb);
         imgGg = findViewById(R.id.imgGg);
         txtOthers = findViewById(R.id.txtOthers);
+        register = findViewById(R.id.register);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, Register.class));
+            }
+        });
+
         btnLogin = (MaterialButton) findViewById(R.id.btnLogin);
         //login
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +86,12 @@ public class Login extends AppCompatActivity {
                     if (passwordDB != null) {
                         if (bCrypt.checkpw(password, passwordDB)) {
                             Toast.makeText(Login.this, "Login successfully", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(Login.this, Navigation_Home.class));
+                            if(userDAO.getInforUser(userName).getRole()==0){
+                                startActivity(new Intent(Login.this, Admin.class));
+                            }else{
+                                startActivity(new Intent(Login.this, Navigation_Home.class));
+                            }
+
                         } else
                             Toast.makeText(Login.this, "Login Fail", Toast.LENGTH_LONG).show();
                     } else {
