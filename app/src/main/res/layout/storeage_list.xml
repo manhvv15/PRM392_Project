@@ -1,47 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:padding="5dp"
-    android:layout_height="wrap_content">
+    android:orientation="horizontal">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/IdStore"
-        android:padding="3dp"
-        android:text="ID"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameStore"
-        android:padding="3dp"
-        android:text="Name"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/PriceStore"
-        android:padding="3dp"
-        android:text="Price"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/CreatedAtStore"
-        android:padding="3dp"
-        android:text="CreatedAt"/>
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/IdStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="ID" />
+
+            <TextView
+                android:id="@+id/NameStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/PriceStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="Price" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/CreatedAtStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="CreatedAt" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="right">
+        android:gravity="right"
+        android:orientation="vertical">
+
         <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/btnInforStore"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Thông tin"
-            android:id="@+id/btnInforStore"/>
+            android:text="Thông tin" />
+
         <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/btnDeleteStore"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Xóa"
-            android:id="@+id/btnDeleteStore"/>
+            android:text="Xóa" />
     </LinearLayout>
 </LinearLayout>

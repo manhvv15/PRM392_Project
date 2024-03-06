@@ -28,4 +28,9 @@ public class Storage {
     private User updatedBy;
     private Timestamp deletedAt;
     private User deletedBy;
+
+    public Storage(int i, String name1, int i1, int i2) {
+        this.id = i;
+
+    }
 }

@@ -113,7 +113,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                   //  Product product = new Product();
                   //  product.setId();
                 //    ProductAdapter adapter = new ProductAdapter(product);
-                    IdProduct = product.getId();
+               //     IdProduct = product.getpos.getId();
                 //   int x = IdProduct;
                     Context context = itemView.getContext();
                     // Tạo một hộp thoại cảnh báo

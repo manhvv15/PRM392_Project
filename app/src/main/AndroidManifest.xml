@@ -17,8 +17,14 @@
         android:theme="@style/Theme.PRM392_Project"
         tools:targetApi="31">
         <activity
-            android:name=".Admin_Storeage"
+            android:name=".Admin"
             android:exported="false" />
+        <activity
+            android:name=".DetailStorerage"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Storeage"
+            android:exported="true" />
         <activity
             android:name=".DetailProduct"
             android:exported="false" />
