@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.prm392_project.adapter.ProductAdapter;
@@ -14,7 +15,7 @@ import com.example.prm392_project.model.Product;
 
 public class DetailProduct extends AppCompatActivity {
 
-    TextView Id, Name, Price, Number;
+    EditText Id, Name, Price, Number;
     Button btnHuy, btnUpdate;
     ProductDAO productDAO;
     Product product;
@@ -55,9 +56,9 @@ public class DetailProduct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //upate
-                product.setName(name);
-                product.setPrice(price);
-                product.setQuantity(quantity);
+                product.setName(Name.getText().toString());
+                product.setPrice(Integer.parseInt(Price.getText().toString()));
+                product.setQuantity(Integer.parseInt(Number.getText().toString()));
                 productDAO.update(product,IdProduct);
                 Intent intent = new Intent(DetailProduct.this, Admin_Product.class);
                 startActivity(intent);

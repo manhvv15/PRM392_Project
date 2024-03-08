@@ -25,10 +25,16 @@ import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductHolder>{
     private List produList;
+    private ProductItemListener productItem;
+    public void setClickListener(ProductItemListener productItem) {
+        this.productItem = productItem;
+    }
     // Lưu Context để dễ dàng truy cập
     private Context mContext;
     public int IdProduct = 1 ;
+   int productId = 1;
     Product product;
+
     public ProductAdapter(Product product){
         this.product = product;
     }
@@ -39,6 +45,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         this.produList = produList;
         this.mContext = mContext;
     }
+
     @NonNull
     @Override
     public ProductHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -64,7 +71,53 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         holder.Quantity.setText(product.getQuantity()+"");
         holder.CreatedAt.setText(product.getCreatedAt()+"");
         holder.CreatedBy.setText(product.getCreatedBy()+"");
-       // holder.imgProduct.setImageResource((product.getSupplier().getId()));
+
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                productId = product.getId();
+                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                builder.setTitle("Confirm Deletion");
+                builder.setMessage("Are you sure you want to delete this item?");
+
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Perform deletion here
+//                        deleteProduct(product);
+                        // Optionally, you may want to remove the item from the list and notify adapter
+                        productDAO.delete(product,productId);
+                        notifyDataSetChanged();
+                        produList.remove(position);
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, produList.size());
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+        holder.btnInfor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 productId = product.getId();
+
+                // Start the detail activity with the productId
+                Context context = v.getContext();
+                Intent intent = new Intent(context, DetailProduct.class);
+                intent.putExtra("IdProduct", productId);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -75,14 +128,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         return 0;
 
     }
+    ProductDAO productDAO;
 
-    public  class ProductHolder extends RecyclerView.ViewHolder{
+    public  class ProductHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private View itemview;
         public TextView Id,Name,Price,Quantity,CreatedAt,CreatedBy;
         Button btnInfor,btnDelete;
         ImageView imgProduct;
-        ProductDAO productDAO;
-        Product product;
         public ProductHolder(@NonNull View itemView) {
             super(itemView);
             itemview = itemView;
@@ -96,25 +148,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
             CreatedBy = itemView.findViewById(R.id.txtTaoBoiProduct);
             btnInfor  = itemView.findViewById(R.id.btnInforProduct);
             btnDelete  = itemView.findViewById(R.id.btnDeleteProduct);
-            btnInfor.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    IdProduct = getAdapterPosition()+1;
-                    Context context = itemView.getContext();
-                    Intent intent = new Intent(context, DetailProduct.class);
-                    intent.putExtra("IdProduct",IdProduct);
-                    context.startActivity(intent);
-                }
-            });
+//            btnInfor.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    IdProduct = getAdapterPosition()+1;
+//                    Context context = itemView.getContext();
+//                    Intent intent = new Intent(context, DetailProduct.class);
+//                    intent.putExtra("IdProduct",IdProduct);
+//                    context.startActivity(intent);
+//                }
+//            });
             btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   // IdProduct = ProductAdapter(product.getId());
-                  //  Product product = new Product();
-                  //  product.setId();
-                //    ProductAdapter adapter = new ProductAdapter(product);
-               //     IdProduct = product.getpos.getId();
-                //   int x = IdProduct;
+
                     Context context = itemView.getContext();
                     // Tạo một hộp thoại cảnh báo
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -147,5 +194,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
             });
 
         }
+
+        @Override
+        public void onClick(View view) {
+            if (productItem != null) {
+                productItem.onItemClick(view, getAdapterPosition());
+            }
+        }
+    }
+    public interface ProductItemListener {
+        void onItemClick(View view, int position);
+
+
     }
 }

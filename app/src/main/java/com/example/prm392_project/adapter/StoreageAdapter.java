@@ -29,6 +29,7 @@ public class StoreageAdapter extends RecyclerView.Adapter<StoreageAdapter.Storea
         this.storageList = storageList;
         this.mContext = mContext;
     }
+    long storeId = 1;
     @NonNull
     @Override
     public StoreageHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,14 +47,22 @@ public class StoreageAdapter extends RecyclerView.Adapter<StoreageAdapter.Storea
     @Override
     public void onBindViewHolder(@NonNull StoreageHolder holder, int position) {
         Storage storage =  storageList.get(position);
-        //  int x = product.getSupplier().getId();
-        //   IdProduct = product.getId();
         holder.Id.setText(storage.getId()+"");
         holder.Name.setText(storage.getProduct().getName());
         holder.Price.setText(storage.getProduct().getPrice()+"");
         holder.CreatedAt.setText(storage.getProduct().getCreatedAt()+"");
-//        holder.CreatedAt.setText(product.getCreatedAt()+"");
-//        holder.CreatedBy.setText(product.getCreatedBy()+"");
+        holder.btnInfor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                storeId = storage.getId();
+
+                // Start the detail activity with the productId
+                Context context = v.getContext();
+                Intent intent = new Intent(context, DetailStorerage.class);
+                intent.putExtra("storeId", storeId);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -34,7 +34,7 @@ public class DetailStorerage extends AppCompatActivity {
         storageDAO = new StorageDAO();
         storage = new Storage();
         Intent intent = getIntent();
-        int IdStorage = intent.getIntExtra("IdStorage",-1);
+        long IdStorage = intent.getLongExtra("storeId",-1);
         storage = storageDAO.getStorageById((IdStorage));
         Id.setText(String.valueOf(storage.getId()));
         Seri.setText(String.valueOf(storage.getSerialNumber()));

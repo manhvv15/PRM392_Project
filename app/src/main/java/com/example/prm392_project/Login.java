@@ -89,7 +89,11 @@ public class Login extends AppCompatActivity {
                             if(userDAO.getInforUser(userName).getRole()==0){
                                 startActivity(new Intent(Login.this, Admin.class));
                             }else{
-                                startActivity(new Intent(Login.this, Navigation_Home.class));
+                                Intent intent = new Intent(Login.this, Navigation_Home.class);
+                               // public String nameUser = us;
+
+                                intent.putExtra("nameUser",userName);
+                                startActivity(intent);
                             }
 
                         } else

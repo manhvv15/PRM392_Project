@@ -100,6 +100,13 @@ public class Navigation_Home extends AppCompatActivity {
                 }else if(item.getItemId()==R.id.login){
                   //  Toast.makeText(Navigation_Home.this,"login is selected",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(Navigation_Home.this, Login.class));
+                }else if(item.getItemId()==R.id.infor){
+                    Intent intent = getIntent();
+                    String nameUser = intent.getStringExtra("nameUser");
+                    //  Toast.makeText(Navigation_Home.this,"login is selected",Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(Navigation_Home.this, User_Infor.class);
+                    intent.putExtra("nameUser",nameUser);
+                    startActivity(i);
                 }
                 else if(item.getItemId()==R.id.register){
                     //  Toast.makeText(Navigation_Home.this,"login is selected",Toast.LENGTH_SHORT).show();

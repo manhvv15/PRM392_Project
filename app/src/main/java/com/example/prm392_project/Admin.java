@@ -11,7 +11,7 @@ import com.example.prm392_project.model.Product;
 
 public class Admin extends AppCompatActivity {
 
-    Button khoHang,sanPham,donHang,giaoDich;
+    Button khoHang,sanPham,donHang,giaoDich,Infor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class Admin extends AppCompatActivity {
         sanPham = findViewById(R.id.btnSanPham);
         donHang = findViewById(R.id.btnDonHang);
         giaoDich = findViewById(R.id.btnTransaction);
+        Infor = findViewById(R.id.btnInforAdmin);
         //kho hang
         khoHang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +50,13 @@ public class Admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Admin.this, Admin_Storeage.class);
+                startActivity(intent);
+            }
+        });
+        Infor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Admin.this, Admin_Infor.class);
                 startActivity(intent);
             }
         });

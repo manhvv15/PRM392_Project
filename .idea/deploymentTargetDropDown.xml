@@ -2,7 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Admin_AllProducts">
+      <entry key="Admin_Infor">
         <State />
       </entry>
       <entry key="Admin_Product">
@@ -14,7 +14,7 @@
       <entry key="Login">
         <State />
       </entry>
-      <entry key="Register">
+      <entry key="Navigation_Home">
         <State />
       </entry>
       <entry key="app">

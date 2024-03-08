@@ -29,11 +29,9 @@ public class Admin_Product extends AppCompatActivity {
         recyclerView = findViewById(R.id.productsList);
         home = findViewById(R.id.imgHomeProduct);
         products = new ArrayList<Product>();
-        products.add(new Product(1,"Name1",2,3));
-        products.add(new Product(2,"Name2",2,3));
         products =   productDAO.getListProduct();
-
         productAdapter = new ProductAdapter(products, this);
+      //  productAdapter.setClickListener(this);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 
