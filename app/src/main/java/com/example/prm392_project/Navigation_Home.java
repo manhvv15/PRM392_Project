@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -46,6 +47,8 @@ public class Navigation_Home extends AppCompatActivity {
     ImageView imgViettel,imgVinaphone,imgVietnammobile,imgMobiphone,imgTru,imgCong;
     TextView txt10,txt20,txt30,txt50,txt100,txt200,txt300,txt500,txtSoLuong;
     Button btnMuangay;
+    int x = 1;
+    String SL = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +81,24 @@ public class Navigation_Home extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
 //        actionBarDrawerToggle.syncState();
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        imgTru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SL = txtSoLuong.getText().toString();
+
+                x = Integer.parseInt(SL) - 1;
+                txtSoLuong.setText(x+"");
+            }
+        });
+        imgCong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SL = txtSoLuong.getText().toString();
+
+                x = Integer.parseInt(SL) + 1;
+                txtSoLuong.setText(x+"");
+            }
+        });
         materialToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -105,7 +126,7 @@ public class Navigation_Home extends AppCompatActivity {
                     String nameUser = intent.getStringExtra("nameUser");
                     //  Toast.makeText(Navigation_Home.this,"login is selected",Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(Navigation_Home.this, User_Infor.class);
-                    intent.putExtra("nameUser",nameUser);
+                    intent.putExtra("nameUser1",nameUser);
                     startActivity(i);
                 }
                 else if(item.getItemId()==R.id.register){
@@ -190,4 +211,5 @@ public class Navigation_Home extends AppCompatActivity {
 
         }
     }
+
 }

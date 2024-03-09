@@ -61,5 +61,6 @@ dependencies {
     implementation ("com.google.android.gms:play-services-auth:21.0.0")
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
     //implementation ("com.google.android.gms:play-services:18.2.0")
-
+  //  implementation ("com.google.android.gms:play-services-maps:18.0.1")
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
 }

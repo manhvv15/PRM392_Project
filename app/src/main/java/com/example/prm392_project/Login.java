@@ -94,6 +94,7 @@ public class Login extends AppCompatActivity {
 
                                 intent.putExtra("nameUser",userName);
                                 startActivity(intent);
+                             //   startActivity( new Intent(Login.this, Navigation_Home.class));
                             }
 
                         } else

@@ -31,7 +31,7 @@ public class User_Infor extends AppCompatActivity {
         userDAO = new UserDAO();
         user  = new User();
         Intent intent = getIntent();
-        String nameUser = intent.getStringExtra("nameUser");
+        String nameUser = intent.getStringExtra("nameUser1");
         user =  userDAO.getInforUser(nameUser);
         name.setText(user.getAccount());
         email.setText(user.getEmail());
