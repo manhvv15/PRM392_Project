@@ -12,5 +12,7 @@
     <color name="colorAccent">#FF5722</color>
     <color name="colorTextFirst">#000000</color>
     <color name="colorTextSecond">#777474</color>
-    <color name="colorview">#A5A2A2</color>
+    <color name="colorview">#D1C7C7</color>
+    <color name="VND">#71BDAE</color>
+    <color name="SoLuong">#BD9CBD</color>
 </resources>

@@ -16,20 +16,24 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:layout_margin="50dp"/>
+
     <EditText
+        android:id="@+id/edtUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edtUserName"
-        android:hint="UserName"
-        android:textColor="@color/white"
-        android:layout_margin="10dp"
-        android:padding="20dp"
         android:layout_below="@+id/txtSignIn"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#30ffffff"
         android:drawableLeft="@drawable/person"
-        android:drawablePadding="20dp"
 
-        android:textColorHint="@color/white"/>
+        android:drawablePadding="20dp"
+        android:hint="UserName"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,15 +47,27 @@
         android:drawableLeft="@drawable/pass"
         android:drawablePadding="20dp"
         android:textColorHint="@color/white"/>
+
     <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
         android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/edtPassword"
-        android:text="LOGIN"
-        android:layout_margin="20dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:layout_height="wrap_content"/>
+        android:text="LOGIN" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/register"
+        android:layout_marginTop="130dp"
+        android:layout_below="@id/txtForgotpass"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

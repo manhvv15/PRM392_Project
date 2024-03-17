@@ -54,8 +54,13 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.android.recaptcha:recaptcha:18.4.0")
+    implementation ("androidx.recyclerview:recyclerview:1.1.0")
     implementation ("com.google.android.gms:play-services-safetynet:18.0.0")
     //implementation ("com.amitshekhar.android:android-networking:1.0.2")
     implementation ("com.facebook.android:facebook-android-sdk:latest.release")
     implementation ("com.google.android.gms:play-services-auth:21.0.0")
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //implementation ("com.google.android.gms:play-services:18.2.0")
+    implementation ("com.google.android.gms:play-services-maps:18.0.1")
+    implementation ("com.google.android.gms:play-services-maps:18.1.0")
 }

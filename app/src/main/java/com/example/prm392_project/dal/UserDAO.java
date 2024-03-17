@@ -31,6 +31,24 @@ public class UserDAO {
         }
         return null;
     }
+    public User getUserById(int id) {
+        try {
+            String query = "SELECT * from user where id = ? and isDelete = false and isActive = true";
+            PreparedStatement ps = DAO.connection.prepareStatement(query);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return new User(rs.getInt("id"), rs.getString("account"), rs.getString("password"),
+                        rs.getString("email"), rs.getInt("role"), rs.getString("phoneNumber"), rs.getInt("balance"),
+                        rs.getBoolean("isDelete"), rs.getBoolean("isActive"), rs.getTimestamp("createdAt"),
+                        rs.getInt("createdBy"), rs.getTimestamp("updatedAt"), rs.getInt("updatedBy"),
+                        rs.getTimestamp("deletedAt"), rs.getInt("deletedBy"));
+            }
+        } catch (Exception ex){
+            Log.e("", ex.getMessage());
+        }
+        return null;
+    }
     public User getInforUser(String account) {
         try{
             String query = "SELECT * FROM dbo.[User] WHERE account = ? ";

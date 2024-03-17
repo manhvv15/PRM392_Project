@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import com.example.prm392_project.dal.DBConnection;
 import com.example.prm392_project.dal.UserDAO;
 import com.example.prm392_project.model.User;
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -48,8 +50,8 @@ public class Login extends AppCompatActivity {
     CallbackManager callbackManager;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
-
-
+    public  String login = "1";
+    Button register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +63,14 @@ public class Login extends AppCompatActivity {
         imgFb = findViewById(R.id.imgFb);
         imgGg = findViewById(R.id.imgGg);
         txtOthers = findViewById(R.id.txtOthers);
+        register = findViewById(R.id.register);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, Register.class));
+            }
+        });
+
         btnLogin = (MaterialButton) findViewById(R.id.btnLogin);
         //login
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -74,9 +84,20 @@ public class Login extends AppCompatActivity {
                     String passwordDB = userDAO.getInforUser(userName).getPassword();
                     //    String passwordDB =   userDAO.getInfoPassword(userName).toString();
                     if (passwordDB != null) {
-                        if (bCrypt.checkpw(password, passwordDB))
+                        if (bCrypt.checkpw(password, passwordDB)) {
                             Toast.makeText(Login.this, "Login successfully", Toast.LENGTH_LONG).show();
-                        else
+                            if(userDAO.getInforUser(userName).getRole()==0){
+                                startActivity(new Intent(Login.this, Admin.class));
+                            }else{
+                                Intent intent = new Intent(Login.this, Navigation_Home.class);
+                               // public String nameUser = us;
+
+                                intent.putExtra("nameUser",userName);
+                                startActivity(intent);
+                             //   startActivity( new Intent(Login.this, Navigation_Home.class));
+                            }
+
+                        } else
                             Toast.makeText(Login.this, "Login Fail", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(Login.this, "Account does not exist", Toast.LENGTH_LONG).show();
@@ -90,10 +111,16 @@ public class Login extends AppCompatActivity {
         });
         //login with fb
         callbackManager = CallbackManager.Factory.create();
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        if(accessToken!=null&&accessToken.isExpired()==false){
+            startActivity(new Intent(Login.this, Navigation_Home.class));
+            finish();
+        }
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
+
                         startActivity(new Intent(Login.this, Navigation_Home.class));
                         finish();
                     }
@@ -108,9 +135,16 @@ public class Login extends AppCompatActivity {
                         // App code
                     }
                 });
+
         imgFb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                login = "2";
+                SharedPreferences preferences = getSharedPreferences("login_infor", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("login", login);
+
+                editor.commit();
                 LoginManager.getInstance().logInWithReadPermissions(Login.this, Arrays.asList("public_profile"));
             }
         });
@@ -120,9 +154,16 @@ public class Login extends AppCompatActivity {
         imgGg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                login = "3";
+                SharedPreferences preferences = getSharedPreferences("login_infor", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("login", login);
+
+                editor.commit();
                 signIn();
             }
         });
+
     }
 
 
@@ -143,7 +184,7 @@ public class Login extends AppCompatActivity {
 
     private void navigationTosecondActivity() {
         finish();
-        Intent intent = new Intent(Login.this,Navigation_Home.class);
+        Intent intent = new Intent(Login.this, Navigation_Home.class);
         startActivity(intent);
     }
 

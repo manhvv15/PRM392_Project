@@ -5,6 +5,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,9 +19,41 @@
         android:theme="@style/Theme.PRM392_Project"
         tools:targetApi="31">
         <activity
+            android:name=".GgMap"
+            android:exported="false" />
+        <activity
+            android:name=".Map"
+            android:exported="true" />
+        <activity
+            android:name=".User_Infor"
+            android:exported="true" />
+        <activity
+            android:name=".Admin_Infor"
+            android:exported="true" />
+        <activity
+            android:name=".Admin"
+            android:exported="false" />
+        <activity
+            android:name=".DetailStorerage"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Storeage"
+            android:exported="true" />
+        <activity
+            android:name=".DetailProduct"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Product"
+            android:exported="true" />
+        <activity
+            android:name=".InforOrder"
+            android:exported="true" />
+        <activity
+            android:name=".Test"
+            android:exported="false" />
+        <activity
             android:name=".Captcha"
             android:exported="true" />
-
         <activity
             android:name=".Register"
             android:exported="true" />
@@ -59,6 +93,13 @@
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
             android:value="@string/facebook_client_token" />
+<!--        <meta-data-->
+<!--            android:name="com.google.android.geo.API_KEY"-->
+<!--            android:value="${AIzaSyAFMZUNvQZjnmeSd7AagPIOc5TdS-x7wYY}" />-->
+            <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyAAkNqFH4KfSa2OuDs7zFXAl3mM7pOMaJQ" />
     </application>
 
 </manifest>
+
